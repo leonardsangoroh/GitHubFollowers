@@ -15,7 +15,7 @@ class NetworkManager {
     
     func getFollowers(for username: String, page: Int, completed: @escaping ([Follower]?, String?) -> Void) {
         
-        let endpoint = baseURL + "\(username)/follwers?per_page=100&page=\(page)"
+        let endpoint = baseURL + "\(username)/followers?per_page=100&page=\(page)"
         
         guard let url = URL(string: endpoint) else {
             completed(nil, "This username created an invalid request. Please try again")
@@ -27,7 +27,7 @@ class NetworkManager {
 //        request.setValue(token, forHTTPHeaderField: "Authorization")
         request.allHTTPHeaderFields = [
             "Accept" : "application/vnd.github+json",
-            //"Authorization" : "\(token)",
+            "Authorization" : "\(token)",
             "X-GitHub-Api-Version" : "2022-11-28"
             
         ]
