@@ -48,6 +48,7 @@ class NetworkManager {
                 return
             }
             
+            /// from JSON to [Follower]()
             do {
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
