@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Follower: Codable {
+// Strings conforms to Hashable so we just declare it on the struct
+struct Follower: Codable, Hashable {
     var login: String
     var avatarUrl: String
 }
