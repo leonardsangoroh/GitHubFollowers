@@ -81,6 +81,13 @@ class FollowerListVC: UIViewController {
                     // network call has a strong reference to 'self' (FollowerListVC) which could cause a memory leak
                     // solution is to make self weak, which in turn makes it an optional
                     self.followers.append(contentsOf: followers)
+                
+                if self.followers.isEmpty {
+                    let message = "This user has no followers :("
+                    DispatchQueue.main.async{
+                        self.showEmptyStateView(with: message, in: self.view)
+                    }
+                }
                     print(followers)
                     self.updateData()
                 case .failure(let error):

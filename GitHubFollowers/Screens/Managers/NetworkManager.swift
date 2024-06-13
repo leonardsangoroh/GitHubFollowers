@@ -23,7 +23,7 @@ class NetworkManager {
             return
         }
         
-        let token = "token"
+        let token = "Bearer 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"
         var request = URLRequest(url: url)
 //        request.setValue(token, forHTTPHeaderField: "Authorization")
         request.allHTTPHeaderFields = [
